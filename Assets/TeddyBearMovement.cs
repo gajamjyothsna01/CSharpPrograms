@@ -6,8 +6,8 @@ public class TeddyBearMovement : MonoBehaviour
 {
     public float moveUnitsPerSecond;
     public GameObject prefabExplosion;
-    public SpriteRenderer sprite;
-    public SpriteRenderer left
+   // public SpriteRenderer sprite;
+  
     // Start is called before the first frame update
     void Start()
     {
