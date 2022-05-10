@@ -6,6 +6,8 @@ public class TimerTest : MonoBehaviour
 {
     Timer timer;
     float startTime;
+    const float CircleLifeSpan = 10;
+    Timer deathTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,11 @@ public class TimerTest : MonoBehaviour
         timer.Duration = 3;
         timer.Run();
         startTime = Time.time;
+
+        // create and start timer
+        deathTimer = gameObject.AddComponent<Timer>();
+        deathTimer.Duration = CircleLifeSpan;
+        deathTimer.Run();
     }
 
     // Update is called once per frame
@@ -27,6 +34,13 @@ public class TimerTest : MonoBehaviour
             startTime = Time.time;
             timer.Run();
         }
+
+        // kill teddy bear if death timer finished
+        if (deathTimer.Finished)
+        {
+            Destroy(gameObject);
+        }
+
 
 
     }
